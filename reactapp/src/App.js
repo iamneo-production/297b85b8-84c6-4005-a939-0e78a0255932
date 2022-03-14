@@ -4,7 +4,8 @@ import './App.css';
 function App() {
   return (
    <div className={"main container"}>
-<h1>Welcome to online Fiurniture Store</h1>
+<h1>Welcome to online Shopping Store</h1>
+<p>This is wahid </p>
    </div>
   );
 }
