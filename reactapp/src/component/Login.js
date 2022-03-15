@@ -14,7 +14,7 @@ export default function Login() {
 
             <button type="button" class="btn btn-secondary">LOGIN</button>
             <p>
-                <span>New to here? Click <a href='#'>here</a></span>
+                <span>New to E-Furniture? Click <a href='#'>here</a></span>
             </p>
         </div>
     );
