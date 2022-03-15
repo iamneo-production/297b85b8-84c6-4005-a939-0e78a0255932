@@ -1,13 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Login from './component/Login'
 function App() {
-  return (
-   <div className={"main container"}>
-<h1>Welcome to online Shopping Store</h1>
-<p>This is wahid </p>
-   </div>
-  );
+    return (
+      // <>
+        <Login/>
+      //</>
+
+    );
 }
 
 export default App;
