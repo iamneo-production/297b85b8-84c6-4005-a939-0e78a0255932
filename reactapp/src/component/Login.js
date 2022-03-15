@@ -1,5 +1,4 @@
 import React from 'react';
-
 export default function Login() {
     return (
       
@@ -15,7 +14,7 @@ export default function Login() {
 
             <button type="button" class="btn btn-secondary">LOGIN</button>
             <p>
-                <span>New to Bookstore? Click <a href='#'>here</a></span>
+                <span>New to here? Click <a href='#'>here</a></span>
             </p>
         </div>
     );
