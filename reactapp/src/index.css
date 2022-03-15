@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#login-container
+{
+  margin-top: 27vh;
+  margin-left: 9rem;
+}
+ 
+.form-control
+{
+  width: 26%;
+}
+
+h1
+{
+  padding-left: 7%;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #386c9a;
+  border-color: #6c757d;
+  margin-left: 8%;
+  width: 121px;
+  letter-spacing: 3px;
+  font-size: 22px;
+  padding: 0px;
+  border-radius: 0.7rem;
+  height: 40px;
+}
+
+p{
+  margin-top: 11px;
+    margin-left: 4.8%;
+}
