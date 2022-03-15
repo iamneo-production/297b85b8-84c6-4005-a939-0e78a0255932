@@ -1,11 +1,14 @@
 import Login from './component/Login'
 function App() {
-    return (
-      // <>
-        <Login/>
-      //</>
 
-    );
+  return (
+   <div className={"main container"}>
+
+  <Login/>
+
+   </div>
+  );
+
 }
 
 export default App;
