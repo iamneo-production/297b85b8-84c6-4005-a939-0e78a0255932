@@ -3,7 +3,7 @@ import img from './images/login_page.jpg';
 export default function Login() {
     return (
 
-        <div id='sign-up-container'>
+        <div id='signupBox'>
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample image"/>
             {/* <img src={img}  alt="Music" id="sign-up-image"/> */}
             <h1 className='my-3'>SIGN UP</h1>
@@ -35,7 +35,7 @@ export default function Login() {
 
             <button type="button" id="submitButton" className="btn btn-secondary signup-submit-btn">SIGN UP</button>
             <p>
-                <span id="signinLink">Already a member? Click <a href='#'>here</a></span>
+                <span id="signinLink">Already a member? Click <a id="signinLink" href='/login'>here</a></span>
             </p>
         </div>
     );
