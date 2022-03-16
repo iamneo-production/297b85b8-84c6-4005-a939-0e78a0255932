@@ -18,7 +18,7 @@ export default function Login() {
 
             <button type="button" className="btn btn-secondary" id='submitButton'>LOGIN</button>
             <p>
-                <span>New to Bookstore? Click <a href='#' id='signupLink'>here</a></span>
+                <span>New to Bookstore? Click <a href='/signup' id='signupLink'>here</a></span>
             </p>
         </div>
     );

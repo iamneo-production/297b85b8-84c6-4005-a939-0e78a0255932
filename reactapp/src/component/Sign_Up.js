@@ -35,7 +35,7 @@ export default function Login() {
 
             <button type="button" id="submitButton" className="btn btn-secondary signup-submit-btn">SIGN UP</button>
             <p>
-                <span id="signinLink">Already a member? Click <a id="signinLink" href='#'>here</a></span>
+                <span id="signinLink">Already a member? Click <a id="signinLink" href='/login'>here</a></span>
             </p>
         </div>
     );
