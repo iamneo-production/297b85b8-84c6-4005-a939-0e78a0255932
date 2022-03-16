@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* Login page */
 #login-container
 {
   margin-top: 27vh;
@@ -43,16 +44,47 @@ h1
   height: 40px;
 }
 
+
+
 p{
   margin-top: 11px;
     margin-left: 4.8%;
 }
-
-#login-image
+.pass-lock
 {
+  font-size: 1.3em;
+    position: absolute;
+    margin-left: -3%;
+    margin-top: 1.1%;
+}
+#login-container img
+{
+  position: absolute;
+    height: 47%;
+    width: 46%;
+    margin-left: 25%;
+    margin-top: -2%;
+}
+
+/* sign up page */
+
+#sign-up-container
+{
+  margin-top: 27vh;
+  margin-left: 9rem;
+}
+
+#sign-up-container img{
   position: absolute;
   height: 36%;
   width: 46%;
   margin-left: 25%;
   margin-top: 1%;
+}
+
+
+.signup-submit-btn
+{
+  letter-spacing: 0px;
+    font-size: 21px;
 }
