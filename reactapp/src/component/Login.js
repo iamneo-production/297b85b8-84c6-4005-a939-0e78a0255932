@@ -1,9 +1,9 @@
 import React from 'react';
-
+import img from './images/login_page.jpg';
 export default function Login() {
     return (
-      
         <div id='login-container'>
+            <img src={img}  alt="Music" id="login-image"/>
             <h1 className='my-3'>LOGIN</h1>
             <div className="mb-3">
                 <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email"/>

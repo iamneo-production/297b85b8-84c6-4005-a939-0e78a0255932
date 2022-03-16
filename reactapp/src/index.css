@@ -47,3 +47,12 @@ p{
   margin-top: 11px;
     margin-left: 4.8%;
 }
+
+#login-image
+{
+  position: absolute;
+  height: 36%;
+  width: 46%;
+  margin-left: 25%;
+  margin-top: 1%;
+}
