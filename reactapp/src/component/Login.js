@@ -27,7 +27,4 @@ export default function Login() {
     );
 }
 
-// this is wahid 
-//this is sofi
-//hii all
-//work properly
+//this is Kishore
