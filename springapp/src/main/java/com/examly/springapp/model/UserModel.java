@@ -2,15 +2,39 @@ package com.examly.springapp.model;
 
 import java.util.*;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="user")
 public class UserModel {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "password")
 	private String password;
+	
+	@Column(name = "username")
 	private String username;
+	
+	@Column(name = "mobilenumber")
 	private String mobileNumber;
+	
+	@Column(name = "active")
 	private boolean active;
+	
+	@Column(name = "role")
 	private String role;
+	
+	@OneToOne(fetch = FetchType.LAZY, optional=false)
+	@JoinColumn(name = "cart", nullable=true)
 	private CartModel cart;
+	
+	
 	private List<OrderModel> ordersList;
 	
 	public UserModel() {}
