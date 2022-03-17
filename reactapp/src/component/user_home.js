@@ -1,3 +1,3 @@
 import react from 'react'
 
-// #this is the hime page for the user
+// #this is the home page for the user
