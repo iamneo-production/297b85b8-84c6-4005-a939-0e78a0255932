@@ -1,21 +1,43 @@
 package com.examly.springapp.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class ProductModel {
-	private String productId;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int productId;
+	
+	@Column(name = "image_url")
 	private String imageUrl;
+	
+	@Column(name = "product_name")
 	private String productName;
+	
+	@Column(name = "price")
 	private String price;
+	
+	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "qty")
 	private String quantity;
 	
 	public ProductModel() {}
-
-	public String getProductId() {
-		return productId;
+	
+	public ProductModel(String imageUrl, String productName, String price, String description,
+			String quantity) {
+		this.imageUrl = imageUrl;
+		this.productName = productName;
+		this.price = price;
+		this.description = description;
+		this.quantity = quantity;
 	}
-
-	public void setProductId(String productId) {
-		this.productId = productId;
+	
+	public int getProductId() {
+		return productId;
 	}
 
 	public String getImageUrl() {

@@ -5,11 +5,12 @@ import java.util.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 public class UserModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private int id;
 	
 	@Column(name = "email")
@@ -30,14 +31,30 @@ public class UserModel {
 	@Column(name = "role")
 	private String role;
 	
-	@OneToOne(fetch = FetchType.LAZY, optional=false)
-	@JoinColumn(name = "cart", nullable=true)
+	@OneToOne
+	@JoinColumn(referencedColumnName="id")
 	private CartModel cart;
 	
-	
+	@OneToMany(mappedBy = "userId", cascade = {CascadeType.ALL})
 	private List<OrderModel> ordersList;
 	
 	public UserModel() {}
+	
+	public UserModel(String email, String password, String username, String mobileNumber, boolean active,
+			String role, CartModel cart, List<OrderModel> ordersList) {
+		this.email = email;
+		this.password = password;
+		this.username = username;
+		this.mobileNumber = mobileNumber;
+		this.active = active;
+		this.role = role;
+		this.cart = cart;
+		this.ordersList = ordersList;
+	}
+
+	public int getId() {
+		return this.id;
+	}
 
 	public String getEmail() {
 		return email;
@@ -102,7 +119,5 @@ public class UserModel {
 	public void setOrdersList(List<OrderModel> ordersList) {
 		this.ordersList = ordersList;
 	}
-	
-	
 	
 }

@@ -1,30 +1,55 @@
 package com.examly.springapp.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "orders")
 public class OrderModel {
 	
-	private String orderId;
-	private String userId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int orderId;
+	
+	@ManyToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name = "userid")
+	private UserModel userId;
+	
+	@Column(name = "product_name")
 	private String ProductName;
+	
+	@Column(name = "qty")
 	private int quantity;
+	
+	@Column(name = "total_price")
 	private String totalPrice;
+	
+	@Column(name = "status")
 	private String Status;
+	
+	@Column(name = "price")
 	private String Price;
 	
 	public OrderModel() {}
 
-	public String getOrderId() {
+	public OrderModel(UserModel userId, String productName, int quantity, String totalPrice, String status,
+			String price) {
+		this.userId = userId;
+		ProductName = productName;
+		this.quantity = quantity;
+		this.totalPrice = totalPrice;
+		Status = status;
+		Price = price;
+	}
+
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
-
-	public String getUserId() {
+	public UserModel getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(UserModel userId) {
 		this.userId = userId;
 	}
 

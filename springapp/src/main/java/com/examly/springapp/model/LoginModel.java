@@ -6,6 +6,11 @@ public class LoginModel {
 	private String password;
 	
 	public LoginModel() {}
+	
+	public LoginModel(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
 
 	public String getEmail() {
 		return email;
@@ -21,6 +26,11 @@ public class LoginModel {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	@Override
+	public String toString() {
+		return "LoginModel [email=" + email + ", password=" + password + "]";
 	}
 	
 }
