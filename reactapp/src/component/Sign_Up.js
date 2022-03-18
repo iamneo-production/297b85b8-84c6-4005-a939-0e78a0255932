@@ -38,10 +38,5 @@ export default function Login() {
                 <span id="signinLink">Already a member? Click <a id="signinLink" href='/login'>here</a></span>
             </p>
         </div>
-<<<<<<< HEAD
-        
-=======
-        // its sofiah 
->>>>>>> 19517614c4de7e7d1aeac245ba9f5816240890ec
     );
 }
