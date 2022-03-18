@@ -13,22 +13,22 @@ public class UserModel {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "email")
+	@Column(name = "email", nullable=false, length=60,unique=true)
 	private String email;
 	
-	@Column(name = "password")
+	@Column(name = "password", nullable=false,unique=true)
 	private String password;
 	
-	@Column(name = "username")
+	@Column(name = "username",length=80, nullable=false)
 	private String username;
 	
-	@Column(name = "mobilenumber")
+	@Column(name = "mobilenumber",length=13, unique=true, nullable=false)
 	private String mobileNumber;
 	
-	@Column(name = "active")
+	@Column(name = "active",length=10, nullable=false)
 	private boolean active;
 	
-	@Column(name = "role")
+	@Column(name = "role",length=12, nullable=false)
 	private String role;
 	
 	@OneToOne
@@ -36,7 +36,7 @@ public class UserModel {
 	private CartModel cart;
 	
 	@OneToMany(mappedBy = "userId", cascade = {CascadeType.ALL})
-	private List<OrderModel> ordersList;
+	private List<OrderModel> ordersList = new ArrayList<>();
 	
 	public UserModel() {}
 	
@@ -116,8 +116,14 @@ public class UserModel {
 		return ordersList;
 	}
 
-	public void setOrdersList(List<OrderModel> ordersList) {
-		this.ordersList = ordersList;
+	public void setOrdersList(OrderModel ordersList) {
+		this.ordersList.add(ordersList);
+	}
+
+	@Override
+	public String toString() {
+		return "UserModel [id=" + id + ", email=" + email + ", password=" + password + ", username=" + username
+				+ ", mobileNumber=" + mobileNumber + ", active=" + active + ", role=" + role + "]";
 	}
 	
 }
