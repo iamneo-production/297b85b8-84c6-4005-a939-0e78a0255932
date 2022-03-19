@@ -9,7 +9,7 @@ function App() {
         const [formErrors, setFormErrors] = useState({});
         const [isSubmit, setIsSubmit] = useState(false);
 
-        const handleChange = (e) => {
+        const handleChange = (e) => { 
             // console.log(e.target);
             const { name, value } = e.target;
             setFormValues({ ...formValues, [name]: value });
@@ -23,7 +23,7 @@ function App() {
         };
 
         useEffect(() => {
-            console.log(formErrors);
+            console.log('form errors*******',formErrors);
             if (Object.keys(formErrors).length === 0 && isSubmit) {
             // console.log(formValues);
             }
@@ -46,7 +46,7 @@ function App() {
                 errors.password = "Password cannot exceed more than 10 characters";
             }
             return errors;
-}
+        }
 
 
 //export default function Login() {
@@ -58,26 +58,26 @@ function App() {
             {Object.keys(formErrors).length === 0 && isSubmit ? (
             <div className="ui message success">Signed in successfully</div>
             ) : (
-                <pre>{JSON.stringify(formValues, undefined,1)}</pre>
+                <pre>{JSON.stringify(formValues, undefined,2)}</pre>
                 )}
 
             <form onSubmit={handleSubmit}>
 
                     <div className="mb-3">
                         <i className="fas fa-user fa-lg me-3 fa-fw pass-lock"></i> 
-                        <input type="email" className="form-control" id="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
+                        <input type="email" name="email" className="form-control" id="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
                     </div>
 
                     <p>{formErrors.email}</p>
 
                     <div className="mb-3">
                         <i className="fas fa-lock fa-lg me-3 fa-fw pass-lock"></i>
-                        <input type="password" className="form-control" id="password" placeholder="Password"  value={formValues.password} onChange={handleChange}/>
+                        <input type="password" name='password' className="form-control" id="password" placeholder="Password"  value={formValues.password} onChange={handleChange}/>
                     </div>
                     
                     <p>{formErrors.password}</p>
 
-                    <button type="button" className="btn btn-secondary" id='submitButton'>LOGIN</button>
+                    <button type="submit" className="btn btn-secondary" id='submitButton'>LOGIN</button>
 
                     <p>
                         <span>New to E-Furniture Shopping? Click <a href='/signup'>here</a></span>
