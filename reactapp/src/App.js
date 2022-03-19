@@ -3,13 +3,12 @@ import "./App.css";
 import Login from './component/Login';
 import Sign_Up from './component/Sign_Up';
 
-import Home from './'
+import Home from './component/home_page';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
                 <Sign_Up />
               </Route>
               <Route path="/homepage">
-                <home_page/>
+                <Home/>
               </Route>
           
           </Switch>
