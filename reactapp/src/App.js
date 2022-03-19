@@ -1,17 +1,21 @@
-import React from 'react';
+// import React from 'react';
+import "./App.css";
 import Login from './component/Login';
 import Sign_Up from './component/Sign_Up';
+
 import Home from './'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-function App() {
 
+function App() {
   return (
     <>
+
     <Router>
       <div className={"main container"}>
           <Switch>
@@ -32,9 +36,10 @@ function App() {
           </Switch>
       </div>
     </Router>
+
     </>
   );
-
 }
+
 
 export default App;
