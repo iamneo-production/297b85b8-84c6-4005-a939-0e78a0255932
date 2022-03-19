@@ -1,43 +1,34 @@
-// import React from 'react';
 import "./App.css";
 import Login from './component/Login';
 import Sign_Up from './component/Sign_Up';
 
-import Home from './'
 
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
   return (
-    <>
-
     <Router>
-      <div className={"main container"}>
-          <Switch>
-          
-              <Route exact path="/">
-                <Login />
-              </Route>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/signup">
-                <Sign_Up />
-              </Route>
-              <Route path="/homepage">
-                <home_page/>
-              </Route>
-          
-          </Switch>
-      </div>
-    </Router>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+      </Routes>
 
-    </>
+      <Routes>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
+              
+      <Routes>
+        <Route path="/signup" element={<Sign_Up />}/>
+      </Routes>
+              
+      <Routes>
+        <Route path="/homepage" element={<home_page/>}/>
+      </Routes>
+              
+    </Router>
   );
 }
 

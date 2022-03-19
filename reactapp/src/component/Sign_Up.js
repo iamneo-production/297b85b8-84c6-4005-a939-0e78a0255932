@@ -1,5 +1,5 @@
 import React from 'react';
-import img from './images/login_page.jpg';
+// import img from './images/login_page.jpg';
 export default function Login() {
     return (
 
