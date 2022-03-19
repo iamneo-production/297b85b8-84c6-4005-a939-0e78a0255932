@@ -31,11 +31,11 @@ function App() {
             <img src={img}  alt="Music" id="login-image"/>
             <h1 className='my-3'>LOGIN</h1>
 
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
+            {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
             <div className="ui message success">Signed in successfully</div>
             ) : (
                 <pre>{JSON.stringify(formValues, undefined,2)}</pre>
-                )}
+                )} */}
 
             <form onSubmit={handleSubmit}>
 
@@ -44,14 +44,14 @@ function App() {
                         <input type="email" name="email" className="form-control" id="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
                     </div>
 
-                    <p>{formErrors.email}</p>
+                    <p className='error-message'>{formErrors.email}</p>
 
                     <div className="mb-3">
                         <i className="fas fa-lock fa-lg me-3 fa-fw pass-lock"></i>
                         <input type="password" name='password' className="form-control" id="password" placeholder="Password"  value={formValues.password} onChange={handleChange}/>
                     </div>
                     
-                    <p>{formErrors.password}</p>
+                    <p className='error-message'>{formErrors.password}</p>
 
                     <button type="submit" className="btn btn-secondary" id='submitButton'>LOGIN</button>
 
