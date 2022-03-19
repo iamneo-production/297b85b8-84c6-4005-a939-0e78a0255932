@@ -22,7 +22,7 @@ public class ProductModel {
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "qty")
+	@Column(name = "quantity")
 	private String quantity;
 	
 	public ProductModel() {}
@@ -79,5 +79,13 @@ public class ProductModel {
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
+
+	@Override
+	public String toString() {
+		return "ProductModel [productId=" + productId + ", imageUrl=" + imageUrl + ", productName=" + productName
+				+ ", price=" + price + ", description=" + description + ", quantity=" + quantity + "]";
+	}
+	
+	
 	
 }
