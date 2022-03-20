@@ -34,7 +34,7 @@ function App() {
         return (
           <>
               <Router>
-              <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/>
+              {/* <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/> */}
 
                 <Alert alert={alert}/>
 
@@ -42,6 +42,7 @@ function App() {
                     <Switch>
                     
                         <Route exact path="/">
+                          
                           <Login showAlert={showAlert} />
                         </Route>
                         <Route path="/login">
@@ -52,14 +53,17 @@ function App() {
                         </Route>
 
                         <Route  path="/home">
+                        <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/>
                           <Home heading="WELCOME HOME"/>
                         </Route>
 
                         <Route path="/cart">
+                        <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/>
                           <Cart heading="WELCOME TO CART"/>
                         </Route>
 
                         <Route path="/orders">
+                        <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/>
                           <Order heading="WELCOME TO MY ORDERS"/>
                         </Route>
                     
