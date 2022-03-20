@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 import img from './images/login_page.jpg';
-import { useState, useEffect } from "react";
+// import { useState, } from "react";
 import Validate from './Validate';
-
-function App() {
+import React, {useState,useEffect } from 'react';
+function App(props) {
 
         const initialValues = { email: "", password:"" };
         const [formValues, setFormValues] = useState(initialValues);
@@ -15,14 +15,21 @@ function App() {
             setFormValues({ ...formValues, [name]: value });
         };
 
+        const handleUpClick = ()=>{
+            props.showAlert("alert working!", "success");
+        }
+
         const handleSubmit = (e) => {
             e.preventDefault();
             setFormErrors(Validate(formValues));
+            // props.showAlert("Converted to uppercase!", "success");................//not working
             setIsSubmit(true);
+            
         };
 
         useEffect(() => {
             if (Object.keys(formErrors).length === 0 && isSubmit) {
+                
             }
         }, [formErrors]);
 
@@ -44,6 +51,7 @@ function App() {
                         <input type="email" name="email" className="form-control" id="email" placeholder="Email" value={formValues.email} onChange={handleChange}/>
                     </div>
 
+                    
                     <p className='error-message'>{formErrors.email}</p>
 
                     <div className="mb-3">
@@ -53,7 +61,7 @@ function App() {
                     
                     <p className='error-message'>{formErrors.password}</p>
 
-                    <button type="submit" className="btn btn-secondary" id='submitButton'>LOGIN</button>
+                    <button type="submit" className="btn btn-secondary" id='submitButton' onClick={handleUpClick}>LOGIN</button>
 
                     <p>
                         <span>New to E-Furniture Shopping? Click <a href='/signup'>here</a></span>
