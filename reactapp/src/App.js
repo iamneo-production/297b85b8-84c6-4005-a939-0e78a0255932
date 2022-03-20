@@ -11,10 +11,9 @@ import Home from './component/home_page';
 
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
+  Switch,
+  Route
 } from "react-router-dom";
-
 
 function App() {
   

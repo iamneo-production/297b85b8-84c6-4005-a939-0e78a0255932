@@ -1,9 +1,13 @@
 function Validate(values) {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    
+
+    // const handleUpClick = (msg)=>{
+    //         props.showAlert("Error", );msg
+    // }
     if (!values.email) {
         errors.email = "Email is required!";
+        // handleUpClick(errors.email);
     } 
 
     else if (!regex.test(values.email)) {
