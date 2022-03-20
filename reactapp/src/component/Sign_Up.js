@@ -26,6 +26,7 @@ function App() {
     }, [formErrors]);
 
 
+export default function Login() {
     return (
 
         <div id='signupBox'>
