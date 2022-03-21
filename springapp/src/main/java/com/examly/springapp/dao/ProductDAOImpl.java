@@ -1,5 +1,6 @@
 package com.examly.springapp.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -44,6 +45,33 @@ private EntityManager entityManager;
 		catch(Exception e) {
 			check = false;
 			t.rollback();
+		}
+		finally {
+			session.close();
+		}
+		return check;
+	}
+
+	@Override
+	@Transactional
+	public ProductModel getProduct(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		ProductModel product = session.find(ProductModel.class, id);
+		return product;
+	}
+
+	@Override
+	public boolean updateProduct(ProductModel product) {
+		Session session = entityManager.unwrap(Session.class);
+		Transaction t = session.beginTransaction();
+		boolean check = true;
+		try {
+			session.update(product);
+			t.commit();
+		}
+		catch(Exception e) {
+			t.rollback();
+			check = false;
 		}
 		finally {
 			session.close();

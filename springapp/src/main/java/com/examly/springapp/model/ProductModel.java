@@ -27,8 +27,9 @@ public class ProductModel {
 	
 	public ProductModel() {}
 	
-	public ProductModel(String imageUrl, String productName, String price, String description,
+	public ProductModel(int productId, String imageUrl, String productName, String price, String description,
 			String quantity) {
+		this.productId = productId;
 		this.imageUrl = imageUrl;
 		this.productName = productName;
 		this.price = price;
@@ -38,6 +39,10 @@ public class ProductModel {
 	
 	public int getProductId() {
 		return productId;
+	}
+	
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
 	public String getImageUrl() {

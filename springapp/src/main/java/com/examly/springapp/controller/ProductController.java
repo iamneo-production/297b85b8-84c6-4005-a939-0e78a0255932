@@ -35,5 +35,15 @@ public class ProductController {
 		else
 			return "Product not added";
 	}
-
+	
+	@GetMapping("/admin/productEdit/{id}")
+	public ProductModel productEditData(@PathVariable int id) {
+		return productDao.getProduct(id);
+	}
+	
+	@PostMapping("/admin/productEdit/{id}")
+	public boolean productEditSave(@RequestBody ProductModel product) {
+		System.out.println(product);
+		return productDao.saveProduct(product);
+	}
 }
