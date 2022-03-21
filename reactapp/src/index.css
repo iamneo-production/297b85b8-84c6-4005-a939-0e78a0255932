@@ -18,6 +18,11 @@ code {
   margin-top: 27vh;
   margin-left: 9rem;
 }
+
+.error-message
+{
+  color: red;
+}
  
 .form-control
 {
