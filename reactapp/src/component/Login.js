@@ -4,7 +4,8 @@ import img from './images/login_page.jpg';
 import Validate from './Validate';
 import React, {useState,useEffect } from 'react';
 function App(props) {
-
+        const [email,setEmail]=useState("");
+        const [password,setPassword]=useState("");
         const initialValues = { email: "", password:"" };
         const [formValues, setFormValues] = useState(initialValues);
         const [formErrors, setFormErrors] = useState({});
@@ -13,8 +14,25 @@ function App(props) {
         const handleChange = (e) => { 
             const { name, value } = e.target;
             setFormValues({ ...formValues, [name]: value });
+            setEmail(formValues.email);
+            setPassword(formValues.password);
         };
 
+        async function loginApi()
+        {
+            console.warn(email,password);
+            let item={email,password};
+            const requestOptions = {
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify(item)
+            };
+            const response = await fetch('http://localhost:8080/login', requestOptions);
+            const result=await response.json();
+            localStorage.setItem("user-info",JSON.stringify(result))
+            // history.push("/add")
+        }
+        
         const handleUpClick = ()=>{
             props.showAlert("alert working!", "success");
         }
@@ -74,3 +92,4 @@ function App(props) {
 
 //commited again
 export default App;
+
