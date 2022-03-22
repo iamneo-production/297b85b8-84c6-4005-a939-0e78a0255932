@@ -12,10 +12,11 @@ function App() {
     const handleChange = (e) => { 
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
+        console.log("form values****",formValues);
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setFormErrors(Validate(formValues));
         setIsSubmit(true);
     };

@@ -34,6 +34,7 @@ function Validate(values) {
     }
 
     else if (values.password.length <= 4) {
+        console.log(values.passsword);
         errors.password = "Password must be more than 4 characters";
     }
     
@@ -56,6 +57,8 @@ function Validate(values) {
 
     else if(values.passsword!==values.confirmpassword)
     {
+        console.log(values.passsword);
+        console.log(values.confirmpassword);
         errors.password = "Password Doesnot Match";
         errors.confirmpassword = "Password Doesnot Match";
     }
