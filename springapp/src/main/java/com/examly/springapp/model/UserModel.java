@@ -16,7 +16,7 @@ public class UserModel {
 	@Column(name = "email", nullable=false, length=60,unique=true)
 	private String email;
 	
-	@Column(name = "password", nullable=false,unique=true)
+	@Column(name = "password", nullable=false)
 	private String password;
 	
 	@Column(name = "username",length=80, nullable=false)

@@ -79,7 +79,7 @@ function App(props) {
                     
                     <p className='error-message'>{formErrors.password}</p>
 
-                    <button type="submit" className="btn btn-secondary" id='submitButton'>LOGIN</button>
+                    <button type="submit" className="btn btn-secondary" id='submitButton' onClick={loginApi}>LOGIN</button>
 
                     <p>
                         <span>New to E-Furniture Shopping? Click <a href='/signup'>here</a></span>

@@ -43,7 +43,7 @@ function App() {
         }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         setFormErrors(Validate(formValues));
         setIsSubmit(true);
     };

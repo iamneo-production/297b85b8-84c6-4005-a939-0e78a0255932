@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import com.examly.springapp.dao.UserDAO;
 import com.examly.springapp.model.LoginModel;
 
+
 @RestController
+@CrossOrigin(origins = "*")
 public class LoginController {
 	
 private UserDAO userDao;
