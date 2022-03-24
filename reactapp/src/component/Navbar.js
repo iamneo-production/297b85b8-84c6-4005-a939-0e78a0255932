@@ -6,7 +6,7 @@ export default function Navbar(props) {
     return (
         <nav id="userNavbar" className={`navbar navbar-expand-lg navbar`}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">{props.title}</Link>
+                <Link className="navbar-brand" to="/home">{props.title}</Link>
                 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">

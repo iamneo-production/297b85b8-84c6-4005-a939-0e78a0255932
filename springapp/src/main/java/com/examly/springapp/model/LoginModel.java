@@ -32,5 +32,4 @@ public class LoginModel {
 	public String toString() {
 		return "LoginModel [email=" + email + ", password=" + password + "]";
 	}
-	
 }

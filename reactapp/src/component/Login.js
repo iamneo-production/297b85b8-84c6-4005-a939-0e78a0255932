@@ -30,6 +30,7 @@ function App(props) {
             const response = await fetch('http://localhost:8080/login', requestOptions);
             const result=await response.json();
             localStorage.setItem("user-info",JSON.stringify(result))
+            console.log(JSON.stringify(result));
             // history.push("/add")
         }
         
