@@ -1,14 +1,8 @@
 import React from 'react';
-
 import { useState, useEffect } from "react";
 import Validate from './Validate';
 
 function App() {
-    const [email,setEmail]=useState("");
-    const [username,setUsername]=useState("");
-    const [mobilenumber,setMobileNumber]=useState("");
-    const [password,setPassword]=useState("");
-    const [confirmpassword,setConfirmPassword]=useState("");
 
     const initialValues = { email: "", username:"",mobilenumber:"",password:"",confirmpassword:""};
     const [formValues, setFormValues] = useState(initialValues);
@@ -18,32 +12,10 @@ function App() {
     const handleChange = (e) => { 
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
-        setEmail(formValues.email);
-        setUsername(formValues.username);
-        setMobileNumber(formValues.mobilenumber);
-        setPassword(formValues.password);
-        setConfirmPassword(formValues.confirmpassword);
     };
 
-    async function signUpApi()
-        {
-            console.warn("Sign Up Details : \n",email,username,mobilenumber,password,confirmpassword);
-            let item={email,username,mobilenumber,password,confirmpassword,"active" : "true",
-            "role" : "customer"};
-
-            const requestOptions = {
-                method:'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body:JSON.stringify(item)
-            };
-            const response = await fetch('http://localhost:8080/signup', requestOptions);
-            const result=await response.json();
-            localStorage.setItem("user-info",JSON.stringify(result))
-            // history.push("/add")
-        }
-
     const handleSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         setFormErrors(Validate(formValues));
         setIsSubmit(true);
     };
@@ -104,7 +76,7 @@ function App() {
 
                         <p className='error-message'>{formErrors.confirmpassword}</p>
 
-                        <button type="submit" id="submitButton" className="btn btn-secondary signup-submit-btn" onClick={signUpApi}>SIGN UP</button>
+                        <button type="submit" id="submitButton" className="btn btn-secondary signup-submit-btn">SIGN UP</button>
                         <p>
                         
                         <span id="signinLink">Already a member? Click <a id="signinLink" href='/login'>here</a></span>

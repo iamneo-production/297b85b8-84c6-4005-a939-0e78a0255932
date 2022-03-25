@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 
 import {
   getCartItems,
-  getCombinedCartPrices,
-  getOrderItems
+  getCombinedCartPrices
 } from '../redux/cart/cart.selectors';
 import CheckoutItem from './checkoutItem';
 // import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
@@ -36,26 +35,26 @@ const CheckoutPage = ({ cartItems, total, hiddent, addOrder }) => (
         <span>Price</span>
       </HeaderBlockContainer>
       <HeaderBlockContainer>
-        <span></span>
+        <span>Remove</span>
       </HeaderBlockContainer>
     </CheckoutHeaderContainer>
     {cartItems.map((cartItem, idx) => (
-      <CheckoutItem key={idx} cartItem={cartItem} orders/>
+      <CheckoutItem key={idx} cartItem={cartItem} />
     ))}
-    {/* <TotalContainer>
-      <span>TOTAL: ${hiddent ? total -= total / 10 : total}</span>
-    </TotalContainer> */}
-    {/* <WarningContainer>
+    <TotalContainer>
+      <span>TOTAL: ₹{hiddent ? total -= total / 10 : total}</span>
+    </TotalContainer>
+    <WarningContainer>
       *Please use the following test credit card for payments*
       <br />
       4242 4242 4242 4242  —  Exp: 01/21  —  CVV: 123
-    </WarningContainer> */}
-   {/* <Link to="/orders"><button onClick={() => addOrder()}> Place Order </button></Link> */}
+    </WarningContainer>
+   <Link to="/orders"><button onClick={() => addOrder()}> Place Order </button></Link>
   </CheckoutPageContainer>
 );
 
 const mapStateToProps = state => ({
-  cartItems: getOrderItems(state),
+  cartItems: getCartItems(state),
   total: getCombinedCartPrices(state)
   
 });

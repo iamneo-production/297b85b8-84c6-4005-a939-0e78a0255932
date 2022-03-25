@@ -3,11 +3,11 @@ import Navbar from './component/Navbar';
 import Login from './component/Login';
 import Sign_Up from './component/Sign_Up';
 import Alert from './component/Alert';
-import Cart from './component/cart_page';
 import Order from './component/order_page';
 import { useState} from "react";
 
 import Home from './component/home_page';
+import CheckoutPage from './component/checkoutpage'
 
 import {
   BrowserRouter as Router,
@@ -59,7 +59,7 @@ function App() {
 
                         <Route path="/cart">
                         <Navbar title="E-Furniture" aboutText1="Cart" aboutText2="My order" aboutText3="Logout"/>
-                          <Cart heading="WELCOME TO CART"/>
+                          <CheckoutPage />
                         </Route>
 
                         <Route path="/orders">
