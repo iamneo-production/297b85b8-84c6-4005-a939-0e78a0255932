@@ -4,24 +4,21 @@ import img from './images/login_page.jpg';
 import Validate from './Validate';
 import React, {useState,useEffect } from 'react';
 function App(props) {
-        const [email,setEmail]=useState("");
-        const [password,setPassword]=useState("");
         const initialValues = { email: "", password:"" };
         const [formValues, setFormValues] = useState(initialValues);
         const [formErrors, setFormErrors] = useState({});
         const [isSubmit, setIsSubmit] = useState(false);
 
         const handleChange = (e) => { 
-            const { name, value } = e.target;
-            setFormValues({ ...formValues, [name]: value });
-            setEmail(formValues.email);
-            setPassword(formValues.password);
+            setFormValues({ ...formValues, [e.target.name]: e.target.value });
         };
 
         async function loginApi()
         {
-            console.warn(email,password);
+            let email = formValues.email;
+            let password = formValues.password;
             let item={email,password};
+            console.log(item);
             const requestOptions = {
                 method:'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -87,6 +84,8 @@ function App(props) {
                     </p>
                 
                 </form>
+                <p>{formValues.email}</p>
+                <p>{formValues.password}</p>
         </div>
     );
 }
