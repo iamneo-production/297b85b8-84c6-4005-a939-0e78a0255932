@@ -1,3 +1,5 @@
+// this file is just for styling the components and we will be using it and importing it whenever it will be required.....
+
 import styled from 'styled-components';
 
 export const CollectionItemContainer = styled.div`
