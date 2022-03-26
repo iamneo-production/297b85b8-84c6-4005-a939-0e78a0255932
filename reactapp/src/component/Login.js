@@ -4,17 +4,33 @@ import img from './images/login_page.jpg';
 import Validate from './Validate';
 import React, {useState,useEffect } from 'react';
 function App(props) {
-
         const initialValues = { email: "", password:"" };
         const [formValues, setFormValues] = useState(initialValues);
         const [formErrors, setFormErrors] = useState({});
         const [isSubmit, setIsSubmit] = useState(false);
 
         const handleChange = (e) => { 
-            const { name, value } = e.target;
-            setFormValues({ ...formValues, [name]: value });
+            setFormValues({ ...formValues, [e.target.name]: e.target.value });
         };
 
+        async function loginApi()
+        {
+            let email = formValues.email;
+            let password = formValues.password;
+            let item={email,password};
+            console.log(item);
+            const requestOptions = {
+                method:'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:JSON.stringify(item)
+            };
+            const response = await fetch('http://localhost:8080/login', requestOptions);
+            const result=await response.json();
+            localStorage.setItem("user-info",JSON.stringify(result))
+            console.log(JSON.stringify(result));
+            // history.push("/add")
+        }
+        
         const handleUpClick = ()=>{
             props.showAlert("alert working!", "success");
         }
@@ -61,13 +77,15 @@ function App(props) {
                     
                     <p className='error-message'>{formErrors.password}</p>
 
-                    <button type="submit" className="btn btn-secondary" id='submitButton'>LOGIN</button>
+                    <button type="submit" className="btn btn-secondary" id='submitButton' onClick={loginApi}>LOGIN</button>
 
                     <p>
                         <span>New to E-Furniture Shopping? Click <a href='/signup'>here</a></span>
                     </p>
                 
                 </form>
+                <p>{formValues.email}</p>
+                <p>{formValues.password}</p>
         </div>
     );
 }
