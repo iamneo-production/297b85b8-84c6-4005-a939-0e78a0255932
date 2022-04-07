@@ -1,8 +1,7 @@
-// import react from "react";
-// import { Link } from 'react-router-dom' 
+
 import { connect } from 'react-redux';
 import { addItemToCart } from '../redux/cart/cart.actions';
-// import { setCurrentPath } from '../redux/user/user.actions'
+
 
 import {
     CollectionItemContainer,

@@ -9,7 +9,7 @@ import {
   getCombinedCartPrices
 } from '../redux/cart/cart.selectors';
 import CheckoutItem from './checkoutItem';
-// import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+
 
 import {
   CheckoutPageContainer,

@@ -1,6 +1,4 @@
-// import React from 'react';
 import img from './images/login_page.jpg';
-// import { useState, } from "react";
 import Validate from './Validate';
 import React, {useState,useEffect } from 'react';
 function App(props) {
@@ -38,15 +36,12 @@ function App(props) {
         const handleSubmit = (e) => {
             e.preventDefault();
             setFormErrors(Validate(formValues));
-            // props.showAlert("Converted to uppercase!", "success");................//not working
             setIsSubmit(true);
             
         };
 
         useEffect(() => {
-            if (Object.keys(formErrors).length === 0 && isSubmit) {
-                
-            }
+            if (Object.keys(formErrors).length === 0 && isSubmit) {}
         }, [formErrors]);
 
     return (
@@ -54,11 +49,6 @@ function App(props) {
             <img src={img}  alt="Music" id="login-image"/>
             <h1 className='my-3'>LOGIN</h1>
 
-            {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-            <div className="ui message success">Signed in successfully</div>
-            ) : (
-                <pre>{JSON.stringify(formValues, undefined,2)}</pre>
-                )} */}
 
             <form onSubmit={handleSubmit}>
 
@@ -84,11 +74,8 @@ function App(props) {
                     </p>
                 
                 </form>
-                <p>{formValues.email}</p>
-                <p>{formValues.password}</p>
+               
         </div>
     );
 }
-
-//commited again
 export default App;

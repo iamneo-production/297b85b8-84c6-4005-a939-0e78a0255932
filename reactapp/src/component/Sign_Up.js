@@ -33,11 +33,7 @@ function App() {
            
             <h1 className='my-3'>SIGN UP</h1>
 
-            {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
-            <div className="ui message success">Signed Up successfully</div>
-            ) : (
-                <pre>{JSON.stringify(formValues, undefined,2)}</pre>
-                )} */}
+          
 
             <form onSubmit={handleSubmit}>
                         

@@ -10,7 +10,6 @@ import {
   getOrderItems
 } from '../redux/cart/cart.selectors';
 import CheckoutItem from './checkoutItem';
-// import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 import {
   CheckoutPageContainer,
@@ -42,15 +41,7 @@ const CheckoutPage = ({ cartItems, total, hiddent, addOrder }) => (
     {cartItems.map((cartItem, idx) => (
       <CheckoutItem key={idx} cartItem={cartItem} orders/>
     ))}
-    {/* <TotalContainer>
-      <span>TOTAL: ${hiddent ? total -= total / 10 : total}</span>
-    </TotalContainer> */}
-    {/* <WarningContainer>
-      *Please use the following test credit card for payments*
-      <br />
-      4242 4242 4242 4242  —  Exp: 01/21  —  CVV: 123
-    </WarningContainer> */}
-   {/* <Link to="/orders"><button onClick={() => addOrder()}> Place Order </button></Link> */}
+
   </CheckoutPageContainer>
 );
 
