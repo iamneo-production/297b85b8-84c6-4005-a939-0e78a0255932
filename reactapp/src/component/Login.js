@@ -1,6 +1,12 @@
 import img from './images/login_page.jpg';
 import Validate from './Validate';
 import React, {useState,useEffect } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+  } from "react-router-dom";
+
 function App(props) {
         const initialValues = { email: "", password:"" };
         const [formValues, setFormValues] = useState(initialValues);
@@ -17,6 +23,7 @@ function App(props) {
             let password = formValues.password;
             let item={email,password};
             console.log(item);
+        
             const requestOptions = {
                 method:'POST',
                 headers: { 'Content-Type': 'application/json' },
