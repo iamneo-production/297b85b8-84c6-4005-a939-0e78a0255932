@@ -29,7 +29,6 @@ function App() {
             }, 1500);
         }
 
-        // showAlert("Light mode has been enabled", "success");
 
         return (
           <>
